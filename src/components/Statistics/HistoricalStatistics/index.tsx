@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import { useGetHistoricalData } from "../../../hooks/useGetHistoricalData";
-
 import Chart from "../../Chart";
 import { chartDataTransformer } from "../../../utils/chardDataHelper";
 import { selectState } from "../../../stateManager/features/stateSlice";
 import { useAppSelector } from "../../../stateManager/store";
 import Loader from "../../Loader";
 import { memo } from "react";
+
 const ChartsHolder = styled.div`
   width: 60%;
   margin: 0 auto;

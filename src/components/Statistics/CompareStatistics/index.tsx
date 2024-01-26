@@ -1,8 +1,9 @@
-import Select, { MultiValue } from "react-select";
+import Select from "react-select";
 import styled from "styled-components";
 import { useGetStates } from "../../../hooks/useGetStates";
 import { memo, useState } from "react";
 import Chart from "../../Chart";
+import { Options } from "../../../types";
 export declare type FieldValues = Record<string, any>;
 
 const Container = styled.div`
@@ -29,14 +30,11 @@ const Title = styled.h4`
   text-align: center;
   color: ${(props) => props.theme.fontColor};
 `;
-type options = MultiValue<{ label: string; value: string }>;
 const CompareStatistics = () => {
   const { data } = useGetStates();
-  const [selectedStates, setSelectedStates] = useState<options>([]);
+  const [selectedStates, setSelectedStates] = useState<Options>([]);
 
-  const handelChangeStates = (
-    states: MultiValue<{ label: string; value: string }>
-  ) => {
+  const handelChangeStates = (states: Options) => {
     setSelectedStates(states);
   };
   return (
